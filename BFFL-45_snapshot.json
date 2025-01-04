@@ -4,6 +4,15 @@
         "https://github.com/ltdrdata/ComfyUI-Manager.git": {
             "hash": "9074086dcf819d256a7f11218b9faba629c19412",
             "disabled": false
+        },
+	    {
+        "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite": {
+            "hash": "acbf789291e5400f590378aac75909f28b8e7afb",
+            "disabled": false
+        },
+	    "https://github.com/Gourieff/comfyui-reactor-node": {
+            "hash": "467b50614e00002a9922141c33103a5ffec92d67",
+            "disabled": false
         }
     },
     "file_custom_nodes": [
@@ -13,7 +22,6 @@
         }
     ],
     "pips": {
-        "clip": "https://github.com/openai/CLIP/archive/d50d76daa670286dd6cacf3bcd80b5e4823fc8e1.zip#sha256=b5842c25da441d6c581b53a5c60e0c2127ebafe0f746f8e15561a006c6c3be6a",
         "clip-interrogator==0.6.0": "",
         "cmake==3.29.2": "",
         "color-matcher==0.5.0": "",
