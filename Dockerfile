@@ -1,5 +1,5 @@
 # Stage 1: Base image with common dependencies
-FROM nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu22.04 as base
+FROM FROM nvidia/cuda:12.1.0-cudnn8-runtime-ubuntu22.04 AS base
 
 # Prevents prompts from packages asking for user input during installation
 ENV DEBIAN_FRONTEND=noninteractive
@@ -25,15 +25,17 @@ RUN apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
 # Install comfy-cli
 RUN pip install comfy-cli
-RUN pip install -U xformers --index-url https://download.pytorch.org/whl/cu124
+
 # Install ComfyUI
-RUN /usr/bin/yes | comfy --workspace /comfyui install --cuda-version 11.8 --nvidia --version 0.2.7
+#RUN /usr/bin/yes | comfy --workspace /comfyui install --cuda-version 11.8 --nvidia --version 0.2.7
+RUN /usr/bin/yes | comfy --workspace /comfyui install --cuda-version 12.1 --nvidia --version 0.2.7
 
 # Change working directory to ComfyUI
 WORKDIR /comfyui
 
 # Install runpod
 RUN pip install runpod requests
+RUN pip install -U xformers --index-url https://download.pytorch.org/whl/cu124
 
 # Support for the network volume
 ADD src/extra_model_paths.yaml ./
