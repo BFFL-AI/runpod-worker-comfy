@@ -38,7 +38,7 @@ RUN pip install runpod requests
 RUN pip install -U xformers --index-url https://download.pytorch.org/whl/cu124
 
 # Support for the network volume
-ADD src/extra_model_paths.yaml ./
+# ADD src/extra_model_paths.yaml ./
 
 # Go back to the root
 WORKDIR /
