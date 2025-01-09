@@ -15,8 +15,12 @@ RUN apt-get update && apt-get install -y \
     python3.10 \
     python3-pip \
     git \
+	nano \
+    apt-utils \
+	unrar \
+	dos2unix \
+	libgl1 \
     wget \
-    libgl1 \
     && ln -sf /usr/bin/python3.10 /usr/bin/python \
     && ln -sf /usr/bin/pip3 /usr/bin/pip
 
