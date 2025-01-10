@@ -1,5 +1,5 @@
 # Stage 1: Base image with common dependencies
-FROM nvidia/cuda:12.1.0-cudnn8-runtime-ubuntu22.04 AS base
+FROM nvidia/cuda:12.1.0-cudnn8-runtime-ubuntu22.04
 
 # Prevents prompts from packages asking for user input during installation
 ENV DEBIAN_FRONTEND=noninteractive
@@ -58,10 +58,10 @@ ADD *snapshot*.json /
 RUN /restore_snapshot.sh
 
 # Start container
-CMD ["/start.sh"]
+#CMD ["/start.sh"]
 
 # Stage 2: Download models
-FROM base as downloader
+#FROM base as downloader
 
 ARG HUGGINGFACE_ACCESS_TOKEN
 ARG MODEL_TYPE
@@ -110,7 +110,7 @@ RUN pip cache purge
 RUN wget -O extra_model_paths.yaml  https://bfflstorage1.blob.core.windows.net/bffl03blob/docker/extra_model_paths.yaml
 
 # Stage 3: Final image
-FROM base as final
+#FROM base as final
 
 # Copy models from stage 2 to the final image
 COPY --from=downloader /comfyui/models /comfyui/models
