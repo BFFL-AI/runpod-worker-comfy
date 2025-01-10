@@ -1,5 +1,7 @@
 # Stage 1: Base image with common dependencies
-FROM nvidia/cuda:latest
+# FROM nvidia/cuda:12.1.0-cudnn8-runtime-ubuntu22.04
+# docker pull 
+FROM nvidia/cuda:12.6.3-cudnn-runtime-ubuntu20.04
 
 # Prevents prompts from packages asking for user input during installation
 ENV DEBIAN_FRONTEND=noninteractive
