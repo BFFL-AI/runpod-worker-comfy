@@ -94,9 +94,9 @@ RUN wget -O models/facedetection/parsing_parsenet.pth https://bfflstorage1.blob.
 RUN wget -O models/facedetection/detection_Resnet50_Final.pth https://bfflstorage1.blob.core.windows.net/bffl03blob/Models/facedetection/detection_Resnet50_Final.pth
 RUN wget -O models/facerestore_models/codeformer-v0.1.0.pth https://bfflstorage1.blob.core.windows.net/bffl03blob/Models/codeformer-v0.1.0.pth
 
-WORKDIR /comfyui/models/loras
-RUN unrar e loras.rar
-RUN rm loras.rar
+#WORKDIR /comfyui/models/loras
+#RUN unrar e loras.rar
+#RUN rm loras.rar
 #WORKDIR /ComfyUI/models/loras/Loras
 #RUN mv /ComfyUI/models/loras/Loras/* /ComfyUI/models/loras/
 
