@@ -86,11 +86,11 @@ RUN git clone https://github.com/kft334/Knodes
 
 WORKDIR /comfyui/
 # Download checkpoints/vae/LoRA to include in image based on model type
-RUN wget -O models/checkpoints/BFFLPROFILE.safetensors https://bfflstorage1.blob.core.windows.net/bffl03blob/Models/BFFLPROFILE.safetensors
+#RUN wget -O models/checkpoints/BFFLPROFILE.safetensors https://bfflstorage1.blob.core.windows.net/bffl03blob/Models/BFFLPROFILE.safetensors
 RUN wget -O models/vae/fixFP16ErrorsSDXLLowerMemoryUse_v10.safetensors https://bfflstorage1.blob.core.windows.net/bffl03blob/vae/fixFP16ErrorsSDXLLowerMemoryUse_v10.safetensors
-RUN wget -O models/clip_vision/clip_vision_g.safetensors https://bfflstorage1.blob.core.windows.net/bffl03blob/Models/clip_vision/clip_vision_g.safetensors
+#RUN wget -O models/clip_vision/clip_vision_g.safetensors https://bfflstorage1.blob.core.windows.net/bffl03blob/Models/clip_vision/clip_vision_g.safetensors
 RUN wget -O models/facedetection/parsing_parsenet.pth https://bfflstorage1.blob.core.windows.net/bffl03blob/Models/facedetection/parsing_parsenet.pth
-RUN wget -O models/loras/loras.rar https://bfflstorage1.blob.core.windows.net/bffl03blob/Models/Lora/Loras.rar
+#RUN wget -O models/loras/loras.rar https://bfflstorage1.blob.core.windows.net/bffl03blob/Models/Lora/Loras.rar
 RUN wget -O models/facedetection/detection_Resnet50_Final.pth https://bfflstorage1.blob.core.windows.net/bffl03blob/Models/facedetection/detection_Resnet50_Final.pth
 RUN wget -O models/facerestore_models/codeformer-v0.1.0.pth https://bfflstorage1.blob.core.windows.net/bffl03blob/Models/codeformer-v0.1.0.pth
 
@@ -107,7 +107,7 @@ RUN pip install -r bfflreq.txt
 
 RUN pip cache purge
 
-#RUN wget -O extra_model_paths.yaml  https://bfflstorage1.blob.core.windows.net/bffl03blob/docker/extra_model_paths.yaml
+RUN wget -O extra_model_paths.yaml  https://bfflstorage1.blob.core.windows.net/bffl03blob/docker/extra_model_paths.yaml
 
 # Stage 3: Final image
 FROM base as final
